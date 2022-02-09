@@ -17,6 +17,7 @@ debugpy==1.4.3
 decorator==5.1.0
 defusedxml==0.7.1
 distlib==0.3.2
+dj-database-url==0.5.0
 Django==3.2.10
 django-allauth==0.41.0
 django-countries==7.2.1
@@ -59,6 +60,7 @@ pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==8.4.0
 prompt-toolkit==3.0.24
+psycopg2-binary==2.9.3
 ptyprocess==0.7.0
 pycodestyle==2.7.0
 pycparser==2.21
