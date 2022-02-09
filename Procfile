@@ -1,0 +1,1 @@
+web: gunicorn where_travellers_roam.wsgi:application
