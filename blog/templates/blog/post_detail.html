@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<!-- uni-form jquery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/4.3.0/js/jquery.uniform.bundled.js"></script>
+{% endblock %}
+{% block extra_title %} - {{ post.title }} {% endblock %}
+{% block content %}
+<div class="hero-body">
+    <div class="container">
+        <div class="columns is-justify-content-left my-4">
+            <div class="column is-6-desktop is-10-mobile">
+                <a href="{% url 'blog' %}" class="button is-danger"><i class="fas fa-angle-left mr-2"></i> Back to blog
+                    homepage</a>
+            </div>
+        </div>
+        <div class="columns is-justify-content-space-around">
+            <div class="column is-4-tablet is-10-mobile is-offset-1-mobile mb-6">
+                <div class="card blog-card">
+                    <div class="card-header">
+                        <div class="card-header-title">
+                            <h3 class="title-heading-small blog-title">{{ post.title }}</h3>
+                        </div>
+                    </div>
+                    {% if post.image %}
+                    <a href="{% url 'post_detail' post.slug %}">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
+                            </figure>
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="image for {{ post.title }}">
+                        </figure>
+                    </div>
+                    {% endif %}
+                    <div class="card-content blog-card-content">
+                        <p class="blog-card-content">
+                            {{ post.content | capfirst }}
+                        </p>
+
+                        <div class="blog-content content">
+                            <p class="blog-p">By: <span class="blog-small">{{ post.author }},
+                                    {{ post.created_on|timesince }}
+                                    ago </span></p>
+                        </div>
+                    </div>
+                    {% if post.author == request.user %}
+                    <div class="columns is-mobile has-text-centered is-justify-content-center">
+                        <div class="column">
+                            <a href="{% url 'edit_post' post.slug %}" class="button is-danger">Edit<i
+                                    class="fas fa-edit ml-2"></i></a>
+                        </div>
+                        <div class="column">
+                            <button class="js-modal-trigger button is-danger is-light is-outlined"
+                                data-target="modal-delete">
+                                Delete <i class="fas fa-times ml-2"></i>
+                            </button>
+                            <div id="modal-delete" class="modal">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head is-justify-content-center has-text-centered">
+                                        <h4 class="modal-card-title is-uppercase product-subtitles-title">
+                                            Delete Blog Post</h4>
+                                        <button class="modal-close is-large" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body is-justify-content-center has-text-centered">
+                                        <h4 class="is-uppercase product-subtitles-title">
+                                            Are you sure you want to delete
+                                            <span class="is-underlined is-italic"> {{ post.slug }}?</span>
+                                        </h4>
+                                        <p class="is-uppercase product-subtitles-title">
+                                            This action cannot be undone!
+                                        </p>
+                                    </section>
+                                    <footer class="modal-card-foot is-justify-content-space-around">
+                                        <a class="button is-danger" href="{% url 'delete_post' post.slug %}">
+                                            Delete <i class="fas fa-times ml-2"></i>
+                                        </a>
+                                        <button class="button is-danger is-outlined is-light">Cancel</button>
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="column is-6-tablet is-10-mobile is-offset-1-mobile mb-6">
+                <div class="card comments my-4">
+                    <div class="card-header">
+                        <div class="card-header-title">
+                            <h4 class="title-heading-small">Comments about {{ post.title }}</h4>
+                        </div>
+                    </div>
+                    <div class="card-content py-3">
+                        {% for comment in post.comments.all %}
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p class="blog-content">
+                                        {{ comment.comment }}
+                                    </p>
+                                    <p>comment by: <span class="blog-small">{{ comment.comment_author }}
+                                            {{ comment.date_added|timesince }} ago</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        {% empty %}
+                        <div class="my-4">
+                            No comments yet...
+                        </div>
+                        {% endfor %}
+
+                        {% if user.is_authenticated %}
+                        <form method="post" action=".">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="field">
+                                <div class="control">
+                                    <div class="columns is-mobile has-text-centered is-justify-content-space-evenly">
+                                        <div class="column">
+                                            <button class="button is-info">Submit <i
+                                                    class="fas fa-check ml-2"></i></button>
+                                        </div>
+                                        <div class="column">
+                                            <button type="reset" class="button is-info is-light">Reset <i
+                                                    class="fas fa-undo ml-2"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        {% else %}
+                        <h5 class="title-heading-small">Please <a href="{% url 'account_login' %}">log in</a> to add a
+                            comment </h5>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'products/js/modal.js' %}"></script>
+{% endblock %}

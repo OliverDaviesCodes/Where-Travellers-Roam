@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<!-- uni-form jquery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/4.3.0/js/jquery.uniform.bundled.js"></script>
+{% endblock %}
+
+{% block extra_title %} - Blog {% endblock %}
+
+{% block content %}
+<div class="hero-body">
+    <div class="container">
+        <div class="columns is-justify-content-center has-text-centered">
+            <div class="column is-10">
+                <h3 class="title-heading my-4">Welcome to our blog!</h3>
+                <a class="button is-danger my-4" href="{% url 'add_post' %}">Tell us about your trip!<i
+                        class="fas fa-plus-circle m-2"></i></a>
+            </div>
+        </div>
+        <div class="columns is-justify-content-center is-multiline">
+            {% if posts %}
+            {% for post in posts %}
+            <div class="column is-3-desktop is-4-tablet has-text-left my-3">
+                <div class="card blog-card">
+                    <div class="card-header">
+                        <div class="card-header-title">
+                            <a href="{% url 'post_detail' post.slug %}" class="title-heading-small blog-title">
+                                {{ post.title | truncatechars:15 | capfirst }}
+                            </a>
+                        </div>
+                    </div>
+                    {% if post.image %}
+                    <a href="{% url 'post_detail' post.slug %}">
+                        <div class="card-image">
+                            <figure class="is-flex is-align-items-center is-justify-content-center image is-height-300">
+                                <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
+                            </figure>
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="card-image">
+                        <figure class="is-flex is-align-items-center is-justify-content-center image is-height-300">
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="image for {{ post.title }}">
+                        </figure>
+                    </div>
+                    {% endif %}
+                    <div class="card-content">
+                        <p class="blog-card-content product-trunc"> {{ post.content |capfirst }}</p>
+                        <div class="blog-content content">
+                            <p class="blog-p">By: <span class="blog-small">{{ post.author }},
+                                    {{ post.created_on|timesince }}
+                                    ago </span>
+                            </p>
+                            {% if post.comments.all|length == 0 %}
+                            <p class="blog-p">Add
+                                <a href="{% url 'post_detail' post.slug %}">
+                                    comment <i class="far fa-comments"></i> </a>
+                            </p>
+                            {% else %}
+                            <p class="blog-p">See all
+                                <a href="{% url 'post_detail' post.slug %}">
+                                    {{ post.comments.all|length }} comments <i class="far fa-comments"></i></a>
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h4 class="title-heading-small">No posts yet! why not add one?</h4>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}>

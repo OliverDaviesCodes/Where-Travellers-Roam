@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<!-- uni-form jquery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Uniform.js/4.3.0/js/jquery.uniform.bundled.js"></script>
+{% endblock %}
+
+{% block extra_title %} - Edit Blog Post {% endblock %}
+
+{% block content %}
+<div class="hero-body">
+    <div class="container">
+        {% if post.author == request.user %}
+        <div class="columns is-justify-content-center has-text-centered">
+            <div class="column is-10">
+                <h3 class="title-heading my-3">Edit Post</h3>
+            </div>
+        </div>
+        <div class="columns is-justify-content-center">
+            <div class="column is-6-desktop is-10-tablet is-12-mobile">
+                <div class="card my-3">
+                    <div class="card-content">
+                        <form action="{% url 'edit_post' post.slug %}" enctype="multipart/form-data" method="POST">
+                            {% csrf_token %}
+                            {{ form | crispy }}
+                            <div class="is-justify-content-right">
+                                <a href="{% url 'post_detail' post.slug %}" class="button is-danger is-light">
+                                    Cancel
+                                </a>
+                                <button class="button is-danger" type="submit">Update Post</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="columns is-justify-content-center has-text-centered">
+            <div class="column is-6-desktop is-10-tablet is-12-mobile">
+                <h4 class="product-title is-size-3">You are not authorised to do this!</h4>
+            </div>
+        </div>
+        <div class="columns is-justify-content-center has-text-centered my-4">
+            <div class="column is-6-desktop is-10-mobile">
+                <a href="{% url 'blog' %}" class="button is-danger">Back to blog homepage</a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
