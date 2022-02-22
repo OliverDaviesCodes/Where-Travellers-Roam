@@ -107,6 +107,19 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+.card-img-top {
+    height: 250px;
+}
+
+.fa-earth-africa {
+    height: 20px;
+    width: 20px;
+}
+
+.product-h1 {
+    margin-top: 15px;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

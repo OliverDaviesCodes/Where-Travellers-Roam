@@ -36,7 +36,6 @@
     </script>
     <!-- Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
-    <script src="https://kit.fontawesome.com/e8d078a726.js" crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -51,7 +50,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                     <h2 class="logo-font text-black my-0">Where Travellers <strong>Roam</strong> <i
-                            class="fa-solid fa-earth-africa"></i></h2>
+                            class="fas fa-globe-africa"></i></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -96,7 +95,7 @@
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <div><i class="fas fa-cart-arrow-down"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                     ${{ grand_total|floatformat:2 }}
