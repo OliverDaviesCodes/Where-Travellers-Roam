@@ -12,44 +12,52 @@
 
 {% block extra_title %} - Blog {% endblock %}
 
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-<div class="hero-body">
-    <div class="container">
-        <div class="columns is-justify-content-center has-text-centered">
-            <div class="column is-10">
-                <h3 class="title-heading my-4">Welcome to our blog!</h3>
-                <a class="button is-danger my-4" href="{% url 'add_post' %}">Tell us about your trip!<i
+<div class="container-fluid mt-3">
+    <div>
+        <div class="col text-center mt-4">
+            <div>
+                <h3 class="logo-font product-h1">Welcome to our blog!</h3>
+                <a class="btn danger my-4" href="{% url 'add_post' %}">Tell us about your trip!<i
                         class="fas fa-plus-circle m-2"></i></a>
             </div>
         </div>
-        <div class="columns is-justify-content-center is-multiline">
+        <div class="row">
             {% if posts %}
             {% for post in posts %}
-            <div class="column is-3-desktop is-4-tablet has-text-left my-3">
-                <div class="card blog-card">
-                    <div class="card-header">
-                        <div class="card-header-title">
+            <div class="col text-left my-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="card blog-card container">
+                    <div class="card-header row justify-content-center">
+                        <div class="card-header-title justify-content-center">
                             <a href="{% url 'post_detail' post.slug %}" class="title-heading-small blog-title">
                                 {{ post.title | truncatechars:15 | capfirst }}
                             </a>
                         </div>
                     </div>
                     {% if post.image %}
-                    <a href="{% url 'post_detail' post.slug %}">
+                    <a href="{% url 'post_detail' post.slug %}" class="card-image row justify-content-center">
                         <div class="card-image">
-                            <figure class="is-flex is-align-items-center is-justify-content-center image is-height-300">
+                            <figure class="is-flex align-items-center justify-content-center image is-height-300">
                                 <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
                             </figure>
                         </div>
                     </a>
                     {% else %}
                     <div class="card-image">
-                        <figure class="is-flex is-align-items-center is-justify-content-center image is-height-300">
+                        <figure class="is-flex align-items-center justify-content-center image is-height-300">
                             <img src="{{ MEDIA_URL }}noimage.png" alt="image for {{ post.title }}">
                         </figure>
                     </div>
                     {% endif %}
-                    <div class="card-content">
+                    <div class="card-content col-lg-12">
                         <p class="blog-card-content product-trunc"> {{ post.content |capfirst }}</p>
                         <div class="blog-content content">
                             <p class="blog-p">By: <span class="blog-small">{{ post.author }},
@@ -59,7 +67,7 @@
                             {% if post.comments.all|length == 0 %}
                             <p class="blog-p">Add
                                 <a href="{% url 'post_detail' post.slug %}">
-                                    comment <i class="far fa-comments"></i> </a>
+                                    Comment <i class="far fa-comments"></i> </a>
                             </p>
                             {% else %}
                             <p class="blog-p">See all

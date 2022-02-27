@@ -30,6 +30,15 @@ class Post(models.Model):
         return self.title
 
 
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, related_name='comments', on_delete=models.CASCADE)
+    comment_author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="comment", default=1)
+    comment = models.TextField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    
 @receiver(post_delete, sender=Post)
 def submission_delete(sender, instance, **kwargs):
     instance.image.delete(False)
@@ -43,11 +52,3 @@ def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
 
 pre_save.connect(pre_save_blog_post_receiver, sender=Post)
 
-
-class Comment(models.Model):
-    post = models.ForeignKey(
-        Post, related_name='comments', on_delete=models.CASCADE)
-    comment_author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="comment", default=1)
-    comment = models.TextField()
-    date_added = models.DateTimeField(auto_now_add=True)

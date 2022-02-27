@@ -92,6 +92,14 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
+                        <a class="text-black nav-link" href="{% url 'blog' %}">
+                            <div class="text-center">
+                                <div><i class="fas fa-paper-plane"></i></div>
+                                <p class="my-0">Blog</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center">

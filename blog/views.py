@@ -10,12 +10,7 @@ def blog(request):
     """
     View all blog posts
     """
-    posts = Post.objects.all()
-    template = 'blog/blog.html'
-    context = {
-        'posts': posts
-    }
-    return render(request, template, context)
+    return render(request, 'blog/blog.html', {'posts': Post.objects.all()})
 
 
 @login_required
@@ -87,8 +82,7 @@ def edit_post(request, slug):
     user = request.user
 
     if request.method == "POST":
-        form = PostForm(request.POST or None,
-                        request.FILES or None, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if user == post.author:
             if form.is_valid():
                 obj = form.save(commit=False)
