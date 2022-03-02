@@ -120,6 +120,24 @@ input[name='q']::placeholder {
     margin-top: 15px;
 }
 
+/* ------------------------------- Carousel */
+.carousel {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    height: 350px;
+    overflow: hidden;
+    max-width: 800px;
+    float: none;
+    margin: 0 auto !important;
+}
+
+.carousel-caption {
+    background-color: #00000054;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
