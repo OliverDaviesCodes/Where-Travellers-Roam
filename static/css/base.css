@@ -121,21 +121,31 @@ input[name='q']::placeholder {
 }
 
 /* ------------------------------- Carousel */
-.carousel {
-    width: 80%;
-    margin: 0 auto;
-}
 
-.carousel-item {
-    height: 350px;
-    overflow: hidden;
-    max-width: 800px;
-    float: none;
-    margin: 0 auto !important;
-}
 
 .carousel-caption {
     background-color: #00000054;
+}
+
+@media only screen and (min-width: 600px) {
+    .carousel {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    .carousel-item {
+        height: 350px;
+        margin: 0 auto !important;
+        overflow: hidden;
+        float: none;
+    }
+}
+
+/* ------------------------------- profile */
+.profile {
+    background-color: aliceblue;
+    border-radius: 5px;
 }
 
 /* ------------------------------- bootstrap toasts */

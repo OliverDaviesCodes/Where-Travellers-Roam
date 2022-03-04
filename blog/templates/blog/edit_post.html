@@ -31,16 +31,17 @@
         </div>
         <div class="columns is-justify-content-center">
             <div class="column is-6-desktop is-10-tablet is-12-mobile">
-                <div class="card my-3">
+                <div class="card my-3 p-3">
                     <div class="card-content">
-                        <form action="{% url 'edit_post' post.slug %}" enctype="multipart/form-data" method="POST">
+                        <form action="{% url 'edit_post' post.slug %}" enctype="multipart/form-data" method="POST"
+                            class="p-1">
                             {% csrf_token %}
                             {{ form | crispy }}
                             <div class="is-justify-content-right">
-                                <a href="{% url 'post_detail' post.slug %}" class="button is-danger is-light">
+                                <a href="{% url 'post_detail' post.slug %}" class="btn btn-light">
                                     Cancel
                                 </a>
-                                <button class="button is-danger" type="submit">Update Post</button>
+                                <button class="btn btn-info" type="submit">Update Post</button>
                             </div>
                         </form>
                     </div>
