@@ -310,6 +310,22 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+.bg-blue {
+    background-color: #525b76;
+}
+
+.text-blue {
+    color: #525b76;
+}
+
+.btn-blue {
+    background: #525b76;
+    color: white;
+}
+
+.border-black {
+    border: 1px solid #525b76 !important;
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

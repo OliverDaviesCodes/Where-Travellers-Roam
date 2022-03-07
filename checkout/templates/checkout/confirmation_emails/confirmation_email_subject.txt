@@ -1,1 +1,1 @@
-Boutique Ado Confirmation for Order Number {{ order.order_number }}
+Where Travellers Roam Confirmation for Order Number {{ order.order_number }}

@@ -41,6 +41,11 @@ def bag_contents(request):
 
   #  grand_total = delivery + total
 
+    if total < settings.DISCOUNT_THRESHOLD:
+        discount_threshold_delta = settings.DISCOUNT_THRESHOLD - total
+    else:
+        discount_threshold_delta = 0
+
     if total > settings.DISCOUNT_THRESHOLD:
         grand_total = total-200
     else:
@@ -50,6 +55,7 @@ def bag_contents(request):
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
+        'discount_threshold_delta': discount_threshold_delta,
         # 'delivery': delivery,
         # 'free_delivery_delta': free_delivery_delta,
         # 'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,

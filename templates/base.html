@@ -49,17 +49,17 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0">Where Travellers <strong>Roam</strong> <i
+                    <h2 class="logo-font text-blue my-0">Where Travellers <strong>Roam</strong> <i
                             class="fas fa-globe-africa"></i></h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q"
+                        <input class="form-control border text-blue rounded-0" type="text" name="q"
                             placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-blue border border-blue rounded-0" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -71,7 +71,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-blue nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
@@ -92,7 +92,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="text-black nav-link" href="{% url 'blog' %}">
+                        <a class="text-blue nav-link" href="{% url 'blog' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-paper-plane"></i></div>
                                 <p class="my-0">Blog</p>
@@ -100,7 +100,7 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-blue{% endif %} nav-link"
                             href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-cart-arrow-down"></i></div>
