@@ -46,6 +46,12 @@ select option[value=""] {
   color: #aab7c4 !important;
 }
 
+.checkout-success {
+  background-color: aliceblue;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
 #loading-overlay {
   display: none;
   position: fixed;
