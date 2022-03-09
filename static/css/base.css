@@ -107,8 +107,18 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-.card-img-top {
-    height: 250px;
+@media (max-width: 699px) {
+
+    .card-img-top {
+        height: 200px;
+    }
+}
+
+@media (min-width: 700px) {
+
+    .card-img-top {
+        height: 250px;
+    }
 }
 
 .fa-earth-africa {

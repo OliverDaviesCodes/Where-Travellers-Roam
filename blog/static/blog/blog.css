@@ -46,8 +46,8 @@
 
 .blog-card {
     height: 100%;
-    flex-basis: 1 !important;
 }
+
 
 
 /* https://stackoverflow.com/questions/54467992/bulma-scale-image-to-container */
