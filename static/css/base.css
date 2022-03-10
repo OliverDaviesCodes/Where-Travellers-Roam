@@ -10,7 +10,6 @@ body {
     font-family: 'Lato';
 }
 
-/* from Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -41,7 +40,6 @@ body {
 .btn-outline-black {
     background: white;
     color: black !important;
-    /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
 
@@ -232,7 +230,6 @@ input[name='q']::placeholder {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 80%;
@@ -243,9 +240,7 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
-    /* mt-4 */
     color: #6c757d;
-    /* text-secondary */
 }
 
 .allauth-form-inner-content input {
