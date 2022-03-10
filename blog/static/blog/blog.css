@@ -63,3 +63,10 @@
     max-height: 100%;
     object-fit: cover;
 }
+
+@media (max-width: 575px) {
+    .image img {
+        max-height: 250px;
+        object-fit: cover;
+    }
+}
