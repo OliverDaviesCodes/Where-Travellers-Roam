@@ -8,8 +8,8 @@ from django.contrib.auth.models import User
 
 def upload_location(instance, filename):
     file_path = "blog/{author_id}/{title}-{filename}".format(
-        author_id=str(instance.author.id), title=str(instance.title), filename=filename
-    )
+        author_id=str(instance.author.id),
+        title=str(instance.title), filename=filename)
     return file_path
 
 
@@ -32,7 +32,8 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    post = models.ForeignKey(
+        Post, related_name="comments", on_delete=models.CASCADE)
     comment_author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="comment", default=1
     )
@@ -47,7 +48,8 @@ def submission_delete(sender, instance, **kwargs):
 
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
-        instance.slug = slugify(instance.author.username + "-" + instance.title)
+        instance.slug = slugify(
+            instance.author.username + "-" + instance.title)
 
 
 pre_save.connect(pre_save_blog_post_receiver, sender=Post)

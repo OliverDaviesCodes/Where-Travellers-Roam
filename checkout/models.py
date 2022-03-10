@@ -10,8 +10,6 @@ from django_countries.fields import CountryField
 from products.models import Product
 from profiles.models import UserProfile
 
-from bag.contexts import bag_contents
-
 
 class Order(models.Model):
     order_number = models.CharField(max_length=32, null=False, editable=False)
@@ -39,7 +37,8 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0
     )
     original_bag = models.TextField(null=False, blank=False, default="")
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default="")
 
     def _generate_order_number(self):
         """
@@ -54,7 +53,8 @@ class Order(models.Model):
         """
 
         self.order_total = (
-            self.lineitems.aggregate(Sum("lineitem_total"))["lineitem_total__sum"] or 0
+            self.lineitems.aggregate(
+                Sum("lineitem_total"))["lineitem_total__sum"] or 0
         )
         if self.order_total > settings.DISCOUNT_THRESHOLD:
             self.grand_total = self.order_total - 200
