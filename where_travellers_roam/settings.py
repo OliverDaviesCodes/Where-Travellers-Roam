@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "blog",
     "crispy_forms",
     "storages",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
