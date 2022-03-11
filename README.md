@@ -55,8 +55,6 @@ Link to [live site](https://where-travelers-roam.herokuapp.com/)
 - Individuals – the agency offers recreational trips for individuals.
 - Groups - the agency offers group holiday and activities for families and friends.
 
-<a name="user-stories"/>
-
 ## **User Stories**
 
 As a user, I expect:
