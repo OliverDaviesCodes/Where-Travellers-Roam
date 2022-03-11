@@ -1,6 +1,6 @@
 """ Testing code adapted from Code Institute BoutiqueAdo project """
 from django.test import TestCase
-from .models import Category, Product
+from .models import Category
 
 
 class TestCategoryModel(TestCase):

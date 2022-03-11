@@ -20,7 +20,7 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, '/products/')
 
-    def test_basket_page_is_accessible_by_name(self):
+    def test_bag_page_is_accessible_by_name(self):
         """
         test checkout page is accessible by name
         """
