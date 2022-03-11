@@ -11,40 +11,39 @@ This site was built for educational reasons and no purchases will be fulfilled.
 Link to [live site](https://where-travelers-roam.herokuapp.com/)
 
 ## Table of Contents
-1. [UX](#ux)
-    - [User Stories](#user-stories)
-    - [Design](#design)
-    - [Wireframes](#wireframes)
+1. [**UX**](#ux)
+    - [**User Stories**](#user-stories)
+    - [**Design**](#design)
+    - [**Wireframes**](#wireframes)
 
-2. [Features](#features)
-    - [Current Features](#current-features)
-    - [Future Features](#future-features)
+2. [**Features**](#features)
+    - [**Current Features**](#current-features)
+    - [**Future Features**](#future-features)
 
-3. [Database](#database)
-    - [Database choice](#db-choice)
-    - [Database structure](#db-structure)
+3. [*Database*](#database)
+    - [**Database choice**](#db-choice)
+    - [**Database structure**](#db-structure)
 
-4. [Technologies Used](#tech)
-    - [Languages](#languages)
-    - [Frameworks & libraries](#libraries)
-    - [Databases](#db)
-    - [Tools](#tools)
+4. [T**echnologies Used**](#tech)
+    - [**Languages**](#languages)
+    - [**Frameworks & libraries**](#libraries)
+    - [**Databases**](#db)
+    - [**Tools**](#tools)
 
-5. [Testing](#testing)
+5. [**Testing**](#testing)
 
-6. [Deployment](#deployment)
-    - [Heroku Deployment](#depl-heroku)
-    - [Local Deployment (GitPod)](#depl-gitpod)
+6. [**Deployment**](#deployment)
+    - [**Heroku Deployment**](#depl-heroku)
+    - [**Local Deployment (GitPod)**](#depl-gitpod)
 
-7. [Credits](#credits)
-    - [Content](#content)
-    - [Media](#media)
-    - [Code](#code)
-    - [Acknowledgements](#ack)
+7. [**Credits**](#credits)
+    - [**Content**](#content)
+    - [**Media**](#media)
+    - [**Code**](#code)
+    - [**Acknowledgements**](#ack)
 
-<a name="ux"/>
 
-# UX
+# **UX**
 
 **Project definition**
 - “Where Travellers Roam" is a unique travel agency that organizes trips to multiple destinations with the focus on experience and enjoyment. 
@@ -58,7 +57,7 @@ Link to [live site](https://where-travelers-roam.herokuapp.com/)
 
 <a name="user-stories"/>
 
-## User Stories
+## **User Stories**
 
 As a user, I expect:
 1. To have convenient access to all the trips that the travel agency offers.
@@ -74,9 +73,8 @@ As a user, I expect:
 11. As a business or scientist, I want to easily find information on the application process and request information to the company.
 12. As a client, I want to be able to access (and update) my personal information, and view my previous bookings.
 
-<a name="design"/>
 
-## Design
+## **Design**
 
 ### Theme
 
@@ -98,13 +96,12 @@ The three main colors were used throughout this project.
     - Links
     - Some icons
 
-### Typography
+### **Typography**
 
 - The primary font family is [Nunito](https://fonts.google.com/specimen/Lato) from Google Fonts.
 
-<a name="wireframes"/>
 
-## Wireframes
+## **Wireframes**
 
 I have used Balsamiq to create my wireframes. I first brainstormed on the structure and then created the site map. There are some differences with the final project as these wireframes were created during the preparation phase. 
 
@@ -116,13 +113,10 @@ I have used Balsamiq to create my wireframes. I first brainstormed on the struct
 - [Checkout](media/Readme/Wireframe-checkout.png)
 - [Profile](media/Readme/Wireframe-profile.png)
 
-<a name="features"/>
 
-# Features
+# **Features**
 
-<a name="current-features"/>
-
-## Current Features
+## **Current Features**
 
 ###### Features on every page
 - Fixed navigation bar with:
@@ -195,9 +189,7 @@ Profile page for users with an account that should display their:
 
 ###### Feature 12 - Log out 
 
-<a name="future-features"/>
-
-## Future Features 
+## **Future Features** 
 
 ###### About us page
 
@@ -211,32 +203,26 @@ I want to create more continents for users to book holiday and activities to so 
 
 The website feels empty without the ability for customers to contact the site owners, so i would like to create a page dedicated to contacting and asking questions if customers ever feel the need to.
 
-<a name="database"/>
 
-# Database
+# **Database**
 
-<a name="db-choice"/>
-
-## Database choice
+## **Database choice**
 
 - Development: I used sqlite3 database which is the default database provided by Django. 
 - Production: I used PostgreSQL for my deployed application hosted on Heroku. 
 
-<a name="db-structure"/>
 
-## Database structure
+## **Database structure**
 
 The database uses SQL through PostgreSQL and was originally formed from a db.json file in the code. 
 
 The Database schema is below and was create with help from django_extensions and the instructions from my mentor [Dataschema-Instructions](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16)
 ![DataSchema](media/Readme/dataschema.png)
-<a name="tech"/>
 
-# Technologies Used
+# **Technologies Used**
 
-<a name="languages"/>
 
-## Languages
+## **Languages**
 
 ##### [HTML5](https://www.w3.org/TR/html/)
 - I used HTML to create the static content of my website.
@@ -253,9 +239,7 @@ The Database schema is below and was create with help from django_extensions and
 ##### [Python 3](https://www.python.org/downloads/release/python-374/)
 - I used Python 3 as the back-end programming language for my application. I used Pythons Black Formatter recommended by my mentor to help solve the pep8 compliance with my code. This is doenloaded through the extensions hub in gitpod.
 
-<a name="libraries"/>
-
-## Frameworks & Libraries
+## **Frameworks & Libraries**
 
 ##### [Django 3](https://www.djangoproject.com)
 - I used Django 3 as Python framework to build this website. 
@@ -272,9 +256,8 @@ The Database schema is below and was create with help from django_extensions and
 ##### [Google Fonts](https://fonts.google.com/)
 - I used google fonts for my main font families.
 
-<a name="db"/>
 
-## Databases
+## **Databases**
 
 ##### [SQLite3](https://www.sqlite.org/releaselog/3_32_3.html)
 - I used sqlite as database during the development stage.
@@ -282,9 +265,8 @@ The Database schema is below and was create with help from django_extensions and
 ##### [PostgreSQL](https://www.postgresql.org/)
 - I used PostgreSQL as database in production. 
 
-<a name="tools"/>
 
-## Tools
+## **Tools**
 
 ##### [Balsamiq](https://balsamiq.com/) 
 - I used Balsamiq to design my wireframes.
@@ -306,9 +288,8 @@ The Database schema is below and was create with help from django_extensions and
 - I used Heroku to deploy and host my application.
 
 
-<a name="testing"/>
 
-# Testing 
+# **Testing** 
 
 All the documentation regarding the testing of this project can be found in this [TESTING.md](media/Readme/TESTING.md) file.
 
@@ -319,13 +300,11 @@ Exp date: 04/24
 CVC: 242
 ZIP: 42424
 
-<a name="deployment"/>
 
-# Deployment
+# **Deployment**
 
-<a name="depl-heroku"/>
 
-## Heroku
+## **Heroku**
 
 My application was deployed through [heroku](https://dashboard.heroku.com) using the master branch of my github repository for this project. The following steps were implemented to deploy this project:
 
@@ -361,9 +340,8 @@ USE_AWS | `<TRUE>`
 
 5. In the `Deploy` tab, choose `Connect Github` as **Deployment Method** and *Enable Automatic Deployment* from the Github master branch so that any new commit will be automatically deployed through your heroku app. 
 
-<a name="depl-gitpod"/>
 
-## Local Deployment (GitPod)
+## **Local Deployment (GitPod)**
 
 To deploy this project locally using gitpod you will have to create a gitpod account and use a web browser with a stable internet connection as gitpod is an online IDE. I suggest you use Chrome as web browser so that you can use gitpod chrome extension to speed up the deployment process. 
 
@@ -401,28 +379,23 @@ STRIPE_WH_SECRET | `<STRIPE_WH_SECRET>`
     - In the workspace run the following command `Python3 manage.py runserver`.
     - You should now have a gitpod link to the deployed app. 
 
-<a name="credits"/>
 
-# Credits
+# **Credits**
 
-<a name="media"/>
 
-### Media
+### **Media**
 
 - All the images used for this project were found on [Pixabay](https://pixabay.com/) a free image website..
 - I used [Font Awesome](https://fontawesome.com/v4.7.0/icons/) for my icons.
 - Demo picture of my app used in this README file: [Am I Responsive](http://ami.responsivedesign.is/#)
 
-<a name="code"/>
-
-### Code
+### **Code**
 - My mentor helped me through some of the logic code revolving around the discount threshold and applying it across the checkout and bag.
 - [Django Email](https://stackoverflow.com/questions/2809547/creating-email-templates-with-django)
 - [Corey Schafer's Django Tutorials](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
 
-<a name="ack"/>
 
-### Acknowledgements
+### **Acknowledgements**
 - My Code Institute mentor, Reuben fer, for his patience and great support throughout this project.
 - The entire team of tutors at Code Institute for their guidance and patience. 
 - Everyone in slack for tackling my non-stop questions.
