@@ -388,6 +388,7 @@ STRIPE_WH_SECRET | `<STRIPE_WH_SECRET>`
 - Demo picture of my app used in this README file: [Am I Responsive](http://ami.responsivedesign.is/#)
 
 ### **Code**
+- Code for this project has been closely tied to Code Institutes "Boutique Ado Project"  for learning purposes and structured through the step by step videos provided through-out the course, I thank Code institute for teaching and guiding me through-out this journey.
 - My mentor helped me through some of the logic code revolving around the discount threshold and applying it across the checkout and bag.
 - [Django Email](https://stackoverflow.com/questions/2809547/creating-email-templates-with-django)
 - [Corey Schafer's Django Tutorials](https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
